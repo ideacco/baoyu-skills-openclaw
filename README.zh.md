@@ -10,6 +10,64 @@
 * 上游基线提交：`a7ba3d73db878dcc35705f9a72228db68e4b52ef`
 * 已迁移技能：16 个（`skills/*` 下 15 个 + `release-skills`）
 
+## 功能介绍
+
+这个技能包主要面向内容生产场景，共包含 16 个技能：
+
+* 社交内容生成：`baoyu-xhs-images`、`baoyu-infographic`、`baoyu-cover-image`、`baoyu-slide-deck`、`baoyu-comic`、`baoyu-article-illustrator`
+* AI 生成后端：`baoyu-image-gen`、`baoyu-danger-gemini-web`
+* 平台发布自动化：`baoyu-post-to-x`、`baoyu-post-to-wechat`
+* 内容处理工具：`baoyu-url-to-markdown`、`baoyu-danger-x-to-markdown`、`baoyu-format-markdown`、`baoyu-markdown-to-html`、`baoyu-compress-image`
+* 工程/发布流程：`release-skills`
+
+## 使用方法
+
+### 1. 在 OpenClaw 中安装（贴近真实用户流程）
+
+直接在 OpenClaw 对话中输入：
+
+```text
+Please install skills from github.com/ideacco/baoyu-skills-openclaw
+```
+
+安装后验证：
+
+```bash
+openclaw skills list | grep -E 'baoyu-|release-skills'
+openclaw skills check
+```
+
+### 2. 通过自然语言直接调用
+
+可直接在 OpenClaw 聊天中使用：
+
+```text
+帮我生成小红书图片，内容是 AI 工具推荐，用 notion 风格
+把这篇 markdown 转成公众号可用的 HTML
+帮我把这个网页保存成 markdown：https://example.com
+压缩这张图片到 webp，质量 80
+```
+
+### 3. 直接运行脚本（可复现、可调试）
+
+```bash
+# 图片压缩
+npx -y bun skills/baoyu-compress-image/scripts/main.ts ./tmp-test/in.png --format webp --quality 80 --json
+
+# Markdown 格式化
+cd skills/baoyu-format-markdown/scripts && bun main.ts ../../../README.md --no-spacing
+```
+
+### 4. 处理同名技能冲突
+
+如果 OpenClaw 里已存在来自 `openclaw-workspace` 的同名 `baoyu-*` 技能，可能会优先命中旧版本。可先检查当前命中的来源：
+
+```bash
+openclaw skills info baoyu-xhs-images --json
+```
+
+必要时移除或禁用旧的 workspace 版本，确保使用本仓库版本。
+
 ## 仓库结构
 
 * `skills/<skill-name>/SKILL.md` - 迁移后的技能元数据与说明

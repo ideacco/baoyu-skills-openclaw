@@ -10,6 +10,64 @@ OpenClaw-native-first migration of `JimLiu/baoyu-skills`.
 * Upstream baseline commit: `a7ba3d73db878dcc35705f9a72228db68e4b52ef`
 * Migrated skills: 16 (15 from `skills/*` + `release-skills`)
 
+## Feature Overview
+
+This skill pack focuses on content production workflows and includes 16 skills:
+
+* Social content generation: `baoyu-xhs-images`, `baoyu-infographic`, `baoyu-cover-image`, `baoyu-slide-deck`, `baoyu-comic`, `baoyu-article-illustrator`
+* AI generation backends: `baoyu-image-gen`, `baoyu-danger-gemini-web`
+* Publishing automation: `baoyu-post-to-x`, `baoyu-post-to-wechat`
+* Content utilities: `baoyu-url-to-markdown`, `baoyu-danger-x-to-markdown`, `baoyu-format-markdown`, `baoyu-markdown-to-html`, `baoyu-compress-image`
+* Engineering/release workflow: `release-skills`
+
+## Usage Guide
+
+### 1. Install in OpenClaw (user-like flow)
+
+Ask OpenClaw directly:
+
+```text
+Please install skills from github.com/ideacco/baoyu-skills-openclaw
+```
+
+Then verify:
+
+```bash
+openclaw skills list | grep -E 'baoyu-|release-skills'
+openclaw skills check
+```
+
+### 2. Run with natural-language prompts
+
+Example prompts in OpenClaw chat:
+
+```text
+帮我生成小红书图片，内容是 AI 工具推荐，用 notion 风格
+把这篇 markdown 转成公众号可用的 HTML
+帮我把这个网页保存成 markdown：https://example.com
+压缩这张图片到 webp，质量 80
+```
+
+### 3. Run scripts directly (deterministic mode)
+
+```bash
+# Compress image
+npx -y bun skills/baoyu-compress-image/scripts/main.ts ./tmp-test/in.png --format webp --quality 80 --json
+
+# Format markdown
+cd skills/baoyu-format-markdown/scripts && bun main.ts ../../../README.md --no-spacing
+```
+
+### 4. Resolve same-name skill conflicts
+
+If OpenClaw already has another `baoyu-*` skill from `openclaw-workspace`, it may load that version first. Check active source:
+
+```bash
+openclaw skills info baoyu-xhs-images --json
+```
+
+If needed, remove/disable the old workspace copy so this repository version is used.
+
 ## Repository Layout
 
 * `skills/<skill-name>/SKILL.md` - migrated skill metadata and instructions
