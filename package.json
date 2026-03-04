@@ -1,0 +1,11 @@
+{
+  "name": "openclaw-baoyu-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate": "node --experimental-strip-types tools/migrate-all.ts",
+    "inventory": "node --experimental-strip-types tools/migrate-all.ts --inventory-only",
+    "validate": "node --experimental-strip-types tools/validate-migration.ts"
+  }
+}

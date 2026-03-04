@@ -1,0 +1,50 @@
+version: 1
+strategy: openclaw-native-first
+source:
+  format: claude-skill
+  frontmatter_fields:
+    - name
+    - description
+
+target:
+  format: openclaw-skill
+  frontmatter_fields:
+    - name
+    - description
+    - identifier
+    - source
+    - argument-hint
+    - allowed-tools
+    - tags
+
+mapping:
+  name: passthrough
+  description: passthrough
+  identifier: "openclaw/{name}"
+  source: "migrated-from-jimliu/baoyu-skills@{upstream_sha}"
+  argument-hint: "Accepts optional file paths, URLs, and flags used by the original baoyu skill scripts."
+  allowed-tools:
+    default:
+      - read
+      - write
+      - bash
+    browser_automation:
+      - read
+      - write
+      - bash
+      - browser
+    network_api:
+      - read
+      - write
+      - bash
+      - network
+  tags:
+    - migrated
+    - baoyu
+
+compatibility_defaults:
+  preserve_entrypoints: true
+  preserve_scripts_directory: true
+  preserve_references_directory: true
+  preserve_prompts_directory: true
+  ext_config_dual_path: true

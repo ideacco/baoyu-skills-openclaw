@@ -1,0 +1,295 @@
+{
+  "generated_at": "2026-03-04T04:37:42.394Z",
+  "strategy": "openclaw-native-first",
+  "upstream": {
+    "repo": "https://github.com/JimLiu/baoyu-skills",
+    "commit": "a7ba3d73db878dcc35705f9a72228db68e4b52ef"
+  },
+  "totals": {
+    "skills": 16,
+    "with_scripts": 11,
+    "with_references": 10,
+    "with_prompts": 1,
+    "high_risk": 5
+  },
+  "skills": [
+    {
+      "name": "baoyu-xhs-images",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-xhs-images",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": false,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-post-to-x",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-post-to-x",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "chrome",
+        "external-ai-api",
+        "social-platform-access"
+      ],
+      "env_vars": [
+        "HOME",
+        "X_BROWSER_CHROME_PATH"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "name": "baoyu-post-to-wechat",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-post-to-wechat",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "chrome",
+        "external-ai-api",
+        "social-platform-access"
+      ],
+      "env_vars": [
+        "ACCESS_TOKEN",
+        "API",
+        "HOME",
+        "WECHAT_BROWSER_CHROME_PATH"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "name": "baoyu-article-illustrator",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-article-illustrator",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": false,
+      "has_references": true,
+      "has_prompts": true,
+      "external_dependencies": [],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-cover-image",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-cover-image",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": false,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-slide-deck",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-slide-deck",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun"
+      ],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-comic",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-comic",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun"
+      ],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-infographic",
+      "category": "content-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-infographic",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": false,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-danger-gemini-web",
+      "category": "ai-generation-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-danger-gemini-web",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": false,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "chrome",
+        "external-ai-api"
+      ],
+      "env_vars": [
+        "API",
+        "GEMINI_WEB_CHROME_PATH",
+        "GEMINI_WEB_CHROME_PROFILE_DIR",
+        "HOME"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "name": "baoyu-image-gen",
+      "category": "ai-generation-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-image-gen",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "external-ai-api"
+      ],
+      "env_vars": [
+        "API",
+        "DASHSCOPE_API_KEY",
+        "DASHSCOPE_BASE_URL",
+        "GOOGLE_API_KEY",
+        "GOOGLE_BASE_URL",
+        "HOME",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "REPLICATE_API_TOKEN",
+        "REPLICATE_BASE_URL"
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "name": "baoyu-danger-x-to-markdown",
+      "category": "utility-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-danger-x-to-markdown",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": true,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "chrome",
+        "social-platform-access"
+      ],
+      "env_vars": [
+        "API",
+        "HOME",
+        "X_AUTH_TOKEN"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "name": "baoyu-compress-image",
+      "category": "utility-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-compress-image",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": false,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun"
+      ],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-url-to-markdown",
+      "category": "utility-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-url-to-markdown",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": false,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "chrome"
+      ],
+      "env_vars": [
+        "HOME",
+        "URL_CHROME_PATH",
+        "URL_CHROME_PROFILE_DIR",
+        "URL_DATA_DIR"
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "name": "baoyu-format-markdown",
+      "category": "utility-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-format-markdown",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": false,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun"
+      ],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "low"
+    },
+    {
+      "name": "baoyu-markdown-to-html",
+      "category": "utility-skills",
+      "source_dir": "../upstream-baoyu-skills/skills/baoyu-markdown-to-html",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": true,
+      "has_references": false,
+      "has_prompts": false,
+      "external_dependencies": [
+        "bun",
+        "social-platform-access"
+      ],
+      "env_vars": [
+        "HOME"
+      ],
+      "risk_level": "high"
+    },
+    {
+      "name": "release-skills",
+      "category": "release-workflow",
+      "source_dir": "../upstream-baoyu-skills/.claude/skills/release-skills",
+      "source_ref": "jimliu/baoyu-skills@a7ba3d73db878dcc35705f9a72228db68e4b52ef",
+      "has_scripts": false,
+      "has_references": false,
+      "has_prompts": false,
+      "external_dependencies": [],
+      "env_vars": [],
+      "risk_level": "low"
+    }
+  ]
+}
