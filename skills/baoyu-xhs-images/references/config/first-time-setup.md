@@ -78,7 +78,7 @@ options:
   - label: "Project"
     description: ".baoyu-skills/ (this project only)"
   - label: "User"
-    description: "~/.baoyu-skills/ (all projects)"
+    description: "$HOME/.baoyu-skills/ (all projects)"
 ```
 
 ## Save Locations
@@ -86,7 +86,7 @@ options:
 | Choice | Path | Scope |
 |--------|------|-------|
 | Project | `.baoyu-skills/baoyu-xhs-images/EXTEND.md` | Current project |
-| User | `~/.baoyu-skills/baoyu-xhs-images/EXTEND.md` | All projects |
+| User | `$HOME/.baoyu-skills/baoyu-xhs-images/EXTEND.md` | All projects |
 
 ## After Setup
 

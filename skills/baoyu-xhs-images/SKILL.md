@@ -228,6 +228,10 @@ test -f "$HOME/.baoyu-skills/baoyu-xhs-images/EXTEND.md" && echo "user"
 │ $HOME/.baoyu-skills/baoyu-xhs-images/EXTEND.md     │ User home         │
 └────────────────────────────────────────────────────┴───────────────────┘
 
+**Path rule (important)**:
+- Never output paths with literal `~` (for example `~/clawd/...`) in tool calls or file operations.
+- Always use `$HOME/...` or fully resolved absolute paths (for example `/Users/<user>/...`).
+
 ┌───────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │  Result   │                                              Action                                              │
 ├───────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────┤
@@ -523,4 +527,3 @@ Detected env vars: `HOME`
 ## OpenClaw Failure Fallback
 
 - If runtime dependency is missing, stop execution and return exact install/setup command.
-

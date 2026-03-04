@@ -75,6 +75,8 @@ AI generation skills (for example `baoyu-image-gen`) require at least one of:
   Fix: run `bun install` under `skills/baoyu-format-markdown/scripts`.
 * `npx autocorrect-node` network error
   Workaround: run formatter with `--no-spacing` in restricted/offline environments.
+* Output path becomes `/.../~/...` (tilde not expanded)
+  Cause: literal `~` path used in skill prompts/tool calls. Fix: always use `$HOME/...` or absolute paths.
 
 ## OpenClaw Compatibility Notes
 
